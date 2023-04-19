@@ -1,0 +1,28 @@
+# reload config file
+bind r source-file ~/.tmux.conf \; display ".tmux.conf reloaded!"
+{% if tmux.ctrl_a_prefix %}
+
+# remap prefix to Ctrl + a, bind 'C-a C-a' to type 'C-a'
+set -g prefix C-a
+bind C-a send-prefix
+unbind C-b
+{% endif %}
+{% if tmux.vim_settings %}
+
+# prevent slow escape presses
+set -sg escape-time 0
+
+# pane movement shortcuts (same as vim)
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind -r H resize-pane -L 2
+bind -r J resize-pane -D 2
+bind -r K resize-pane -U 2
+bind -r L resize-pane -R 2
+
+# neovim 'checkhealth' suggestions
+set-option -g focus-events on
+{% endif %}
