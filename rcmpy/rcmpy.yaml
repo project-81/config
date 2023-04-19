@@ -3,3 +3,7 @@ files:
   - template: tmux.conf
     name: .tmux.conf
     directory: "~"
+
+  - template: gitconfig
+    name: .gitconfig
+    directory: "~"
