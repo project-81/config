@@ -11,3 +11,6 @@ files:
   - template: bashrc
     name: .alias
     directory: "~"
+
+  - template: init.lua
+    directory: "~/.config/nvim"

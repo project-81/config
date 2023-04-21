@@ -1,0 +1,9 @@
+# Settings for bash. Only load this once.
+if [ "$BASHRC_LOADED" ]; then
+	return
+fi
+export BASHRC_LOADED=1
+
+# Aliases.
+alias vim="nvim"
+alias ra="rcmpy apply"
