@@ -10,7 +10,7 @@ unbind C-b
 {% if tmux.vim_settings %}
 
 # prevent slow escape presses
-set -sg escape-time 0
+set -sg escape-time 20
 
 # pane movement shortcuts (same as vim)
 bind h select-pane -L
