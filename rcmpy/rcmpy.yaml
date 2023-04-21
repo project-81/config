@@ -7,3 +7,7 @@ files:
   - template: gitconfig
     name: .gitconfig
     directory: "~"
+
+  - template: bashrc
+    name: .alias
+    directory: "~"
