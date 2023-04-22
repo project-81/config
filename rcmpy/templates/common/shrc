@@ -9,6 +9,7 @@ export EDITOR="vim"
 # Aliases.
 alias vim="nvim"
 alias ra="rcmpy apply"
+alias bazel="bazelisk"
 
 ###############################################################################
 
