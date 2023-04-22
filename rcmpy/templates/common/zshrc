@@ -1,15 +1,26 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd extendedglob nomatch notify
-unsetopt beep
-bindkey -v
+# HISTFILE=~/.histfile
+# HISTSIZE=1000
+# SAVEHIST=1000
+# setopt autocd extendedglob nomatch notify
+# unsetopt beep
+# bindkey -v
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename ~/.zshrc
+# zstyle :compinstall filename ~/.zshrc
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/third-party/ohmyzsh"
+
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source ~/.shrc
+source $ZSH/oh-my-zsh.sh

@@ -1,8 +1,6 @@
 # Some settings need to be re-applied on every load.
 
-# Aliases.
-alias vim="nvim"
-alias ra="rcmpy apply"
+. ~/.shrc
 
 set -o vi
 

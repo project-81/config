@@ -5,6 +5,11 @@ files:
     directory: "~"
     platforms: [linux]
 
+  - template: shrc
+    name: .shrc
+    directory: "~"
+    platforms: [linux]
+
   - template: zshrc
     name: .zshrc
     directory: "~"
