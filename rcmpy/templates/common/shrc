@@ -2,6 +2,9 @@
 export LANG=en_US.UTF-8
 export EDITOR="vim"
 
+[ "$PYTHON_VERSION" ] || export PYTHON_VERSION=3.11
+[ "$GO_VERSION" ] || export GO_VERSION=1.20
+
 # Aliases.
 alias vim="nvim"
 alias ra="rcmpy apply"
