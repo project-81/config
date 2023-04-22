@@ -30,20 +30,20 @@ keybinds = {
   ["<Space>"] = "i_<Esc>r",
 
   -- Navigating tabs.
-  ["<leader>p"] = ":tabp<CR>",
-  ["<leader>n"] = ":tabn<CR>",
-  ["<leader>t"] = ":tab split +Explore<CR>",
-  ["<leader>T"] = ":Explore<CR>",
+  ["<leader>p"] = ":tabp<cr>",
+  ["<leader>n"] = ":tabn<cr>",
+  ["<leader>t"] = ":tab split +Explore<cr>",
+  ["<leader>T"] = ":Explore<cr>",
 
   -- On a split keyboard, it's awkward to press '<leader>n'. Allow using 'b' as
   -- well.
-  ["<leader>b"] = ":tabn<CR>",
+  ["<leader>b"] = ":tabn<cr>",
 
   -- Fast reload settings.
-  ["<leader>rv"] = ":source $MYVIMRC<CR>",
+  ["<leader>rv"] = ":source $MYVIMRC<cr>",
 
   -- Visualize tabs and newlines toggle.
-  ["<leader>l"] = ":set list!<CR>",
+  ["<leader>l"] = ":set list!<cr>",
 }
 
 -- Register user functions for pane navigation.
@@ -60,26 +60,10 @@ for name, key in pairs(user_command_mapping) do
   )
 
   -- Assign the appropriate keybind.
-  keybinds["<C-" .. key .. ">"] = ":" .. name .. "<CR>"
+  keybinds["<C-" .. key .. ">"] = ":" .. name .. "<cr>"
 end
 
 -- Register keybinds.
 for key, action in pairs(keybinds) do
   vim.keymap.set("n", key, action)
 end
-
--- Prevent netrw's <C-l> overriding our mapping.
-local netrw = vim.api.nvim_create_augroup("netrw_mapping", { clear = true })
-vim.api.nvim_create_autocmd(
-  "FileType",
-  {
-    pattern = "netrw",
-    group = netrw,
-    callback = function(args)
-      modes = {"n", "v", "o"}
-      key = "<C-l>"
-      vim.keymap.del(modes, key, { buffer = true })
-      vim.keymap.set(modes, key, "WinMoveRight<CR>", { buffer = true })
-    end
-  }
-)

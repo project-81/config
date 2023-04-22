@@ -1,0 +1,7 @@
+---
+files:
+  - template: init.lua
+    directory: "~/.config/nvim"
+
+  - template: netrw.vim
+    directory: "~/.config/nvim/ftplugin"

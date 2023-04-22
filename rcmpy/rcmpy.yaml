@@ -1,16 +1,9 @@
 ---
-files:
-  - template: tmux.conf
-    name: .tmux.conf
-    directory: "~"
+includes:
+  - includes/linux.yaml
+  - includes/vim.yaml
 
+files:
   - template: gitconfig
     name: .gitconfig
     directory: "~"
-
-  - template: bashrc
-    name: .alias
-    directory: "~"
-
-  - template: init.lua
-    directory: "~/.config/nvim"

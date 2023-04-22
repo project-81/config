@@ -1,0 +1,11 @@
+---
+files:
+  - template: bashrc
+    name: .alias
+    directory: "~"
+    platforms: [linux]
+
+  - template: tmux.conf
+    name: .tmux.conf
+    directory: "~"
+    platforms: [linux]
