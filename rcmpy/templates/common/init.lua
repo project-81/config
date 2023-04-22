@@ -67,3 +67,20 @@ end
 for key, action in pairs(keybinds) do
   vim.keymap.set("n", key, action)
 end
+
+-- Plugins.
+vim.cmd([[
+  let g:plug_url_format = 'git@github.com:%s.git'
+  call plug#begin('~/.vim/plugged')
+
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'dense-analysis/ale'
+  Plug 'vim-airline/vim-airline'
+  Plug 'flazz/vim-colorschemes'
+
+  call plug#end()
+
+  colo atom
+
+  let g:airline#extensions#ale#enabled = 1
+]])
