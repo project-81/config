@@ -1,13 +1,4 @@
-# Some settings need to be re-applied on every load.
-
+# shellcheck source=./shrc
 . ~/.shrc
 
 set -o vi
-
-###############################################################################
-
-# Settings for bash. Only load this once.
-if [ "$BASHRC_LOADED" ]; then
-	return
-fi
-export BASHRC_LOADED=1

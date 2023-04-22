@@ -9,3 +9,13 @@ export EDITOR="vim"
 # Aliases.
 alias vim="nvim"
 alias ra="rcmpy apply"
+
+###############################################################################
+
+if [ "$SHRC_LOADED" ]; then
+	return
+fi
+export SHRC_LOADED=1
+
+# Add go binaries to PATH.
+export PATH="$PATH:$(go env GOPATH)/bin"
