@@ -1,6 +1,6 @@
 # Common shell settings.
 export LANG=en_US.UTF-8
-export EDITOR="vim"
+export EDITOR="nvim"
 
 [ "$PYTHON_VERSION" ] || export PYTHON_VERSION=3.11
 [ "$GO_VERSION" ] || export GO_VERSION=1.20
