@@ -4,6 +4,8 @@
 alias vim="nvim"
 alias ra="rcmpy apply"
 
+set -o vi
+
 ###############################################################################
 
 # Settings for bash. Only load this once.
