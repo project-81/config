@@ -39,3 +39,5 @@ fi
 add_if_not "$HOME/bin"
 add_if_not "$HOME/.local/bin"
 add_if_not "/snap/bin"
+
+export PICO_SDK_PATH=~/third-party/pico-sdk
