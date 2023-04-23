@@ -18,7 +18,7 @@
 export ZSH="$HOME/third-party/ohmyzsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="steeef"
 
 plugins=(git)
 
