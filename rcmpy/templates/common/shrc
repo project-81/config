@@ -38,3 +38,4 @@ fi
 # Add common paths in case they aren't already added.
 add_if_not "$HOME/bin"
 add_if_not "$HOME/.local/bin"
+add_if_not "/snap/bin"
