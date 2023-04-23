@@ -25,19 +25,20 @@ in_path() {
 add_if_not() {
 	if ! in_path "$1"; then
 		if [ -d "$1" ]; then
-			export PATH="$PATH:$1"
+			export PATH="$1:$PATH"
 		fi
 	fi
 }
+
+# Add common paths in case they aren't already added.
+add_if_not "$HOME/.cargo/bin"
+add_if_not "$HOME/.local/bin"
+add_if_not "$HOME/bin"
+add_if_not "/snap/bin"
 
 # Add go binaries to PATH.
 if type go >/dev/null; then
 	add_if_not "$(go env GOPATH)/bin"
 fi
-
-# Add common paths in case they aren't already added.
-add_if_not "$HOME/bin"
-add_if_not "$HOME/.local/bin"
-add_if_not "/snap/bin"
 
 export PICO_SDK_PATH=~/third-party/pico-sdk
