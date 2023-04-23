@@ -18,12 +18,12 @@ if [ "$SHRC_LOADED" ]; then
 fi
 export SHRC_LOADED=1
 
-not_in_path() {
+in_path() {
 	[[ ":$PATH:" == *":$1:"* ]]
 }
 
 add_if_not() {
-	if not_in_path "$1"; then
+	if ! in_path "$1"; then
 		if [ -d "$1" ]; then
 			export PATH="$PATH:$1"
 		fi
