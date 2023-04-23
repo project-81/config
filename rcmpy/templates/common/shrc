@@ -19,4 +19,6 @@ fi
 export SHRC_LOADED=1
 
 # Add go binaries to PATH.
-export PATH="$PATH:$(go env GOPATH)/bin"
+if type go; then
+	export PATH="$PATH:$(go env GOPATH)/bin"
+fi
