@@ -28,3 +28,7 @@ files:
     name: config
     directory: "~/.ssh"
     platforms: [linux]
+
+  - template: config.toml
+    directory: "~/.cargo"
+    platforms: [linux]
