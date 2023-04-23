@@ -19,3 +19,7 @@ files:
     name: .tmux.conf
     directory: "~"
     platforms: [linux]
+
+  - template: add_ssh_keys.sh
+    directory: "~/bin"
+    platforms: [linux]
