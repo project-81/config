@@ -23,3 +23,8 @@ files:
   - template: add_ssh_keys.sh
     directory: "~/bin"
     platforms: [linux]
+
+  - template: sshconfig
+    name: config
+    directory: "~/.ssh"
+    platforms: [linux]
