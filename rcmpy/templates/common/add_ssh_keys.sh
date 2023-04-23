@@ -12,38 +12,38 @@ if ! [ "$1" ]; then
 	exit 1
 fi
 
+# Use the real IP address.
+SSH_ARG="$USER@$(getent ahostsv4 "$1" | sed -n 's/ *STREAM.*//p')"
+
 # make sure the target directory exists
-ssh "$USER@$1" mkdir -p $SSH_DIR
+ssh "$SSH_ARG" mkdir -p $SSH_DIR
 
 # make our key authorized, first
-if ssh "$USER@$1" stat $AUTH_KEYS \> /dev/null 2\>\&1
-then
+if ssh "$SSH_ARG" stat $AUTH_KEYS \> /dev/null 2\>\&1; then
 	TMP_AUTH_KEYS=/tmp/authorized_keys
-	scp "$USER@$1:$AUTH_KEYS" $TMP_AUTH_KEYS > /dev/null
-	if grep -Fxq "$(cat $PUBL_KEY)" $TMP_AUTH_KEYS
-	then
+	scp "$SSH_ARG":$AUTH_KEYS $TMP_AUTH_KEYS > /dev/null
+	if grep -Fxq "$(cat $PUBL_KEY)" $TMP_AUTH_KEYS; then
 		echo "found public key in $1's authorized_keys, skipping"
 	else
 		echo "adding public key to $1's (existing) authorized_keys"
 
 		# shellcheck disable=SC2029
-		cat $PUBL_KEY | ssh "$USER@$1" "cat - >> $AUTH_KEYS"
+		cat $PUBL_KEY | ssh "$SSH_ARG" "cat - >> $AUTH_KEYS"
 	fi
 	rm $TMP_AUTH_KEYS
 else
 	echo "adding public key to $1's (new) authorized_keys"
 
 	# shellcheck disable=SC2029
-	cat $PUBL_KEY | ssh "$USER@$1" "cat - >> $AUTH_KEYS"
+	cat $PUBL_KEY | ssh "$SSH_ARG" "cat - >> $AUTH_KEYS"
 fi
 
 add_file_to_remote() {
-	if ssh "$USER@$1" stat "$2" \> /dev/null 2\>\&1
-	then
+	if ssh "$SSH_ARG" stat "$2" \> /dev/null 2\>\&1; then
 		echo "'$2' exists on '$1', skipping"
 	else
 		printf "moving '%s' to '%s' ... " "$2" "$1"
-		rsync -a --ignore-existing "$2" "$USER@$1:$2"
+		rsync -a --ignore-existing "$2" "$SSH_ARG:$2"
 		echo "done"
 	fi
 }
