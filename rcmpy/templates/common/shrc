@@ -1,5 +1,7 @@
 # Common shell settings.
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US
 export EDITOR="nvim"
 
 [ "$PYTHON_VERSION" ] || export PYTHON_VERSION=3.11
@@ -41,4 +43,4 @@ if type go >/dev/null; then
 	add_if_not "$(go env GOPATH)/bin"
 fi
 
-export PICO_SDK_PATH=~/third-party/pico-sdk
+[ "$PICO_SDK_PATH" ] || export PICO_SDK_PATH=~/third-party/pico-sdk
