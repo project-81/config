@@ -20,7 +20,7 @@ if [ "$SHRC_LOADED" ]; then
 fi
 export SHRC_LOADED=1
 
-source functions.sh 2>/dev/null
+source functions.sh 2>/dev/null || source $HOME/bin/functions.sh 2>/dev/null
 
 if [ -z "$LOADED_FUNCTIONS" ]; then
 	return
