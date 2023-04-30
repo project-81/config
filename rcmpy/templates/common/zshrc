@@ -22,6 +22,11 @@ ZSH_THEME="steeef"
 
 plugins=(git tmux sudo command-not-found)
 
+if [ -d "$HOME/third-party/fzf" ]; then
+	plugins+=(fzf)
+	export FZF_BASE="$HOME/third-party/fzf"
+fi
+
 source ~/.shrc
 source $ZSH/oh-my-zsh.sh
 
