@@ -20,7 +20,9 @@ export ZSH="$HOME/third-party/ohmyzsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
 ZSH_THEME="steeef"
 
-plugins=(git)
+plugins=(git tmux sudo command-not-found)
 
 source ~/.shrc
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v

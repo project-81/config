@@ -24,6 +24,14 @@ files:
     directory: "~/bin"
     platforms: [linux]
 
+  - template: loc
+    directory: "~/bin"
+    platforms: [linux]
+
+  - template: tnew
+    directory: "~/bin"
+    platforms: [linux]
+
   - template: sshconfig
     name: config
     directory: "~/.ssh"

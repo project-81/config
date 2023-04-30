@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME=${PWD##*/}
+
+if [ "$1" ]; then
+	NAME+="-$1"
+fi
+
+tmux new -s "$NAME"
