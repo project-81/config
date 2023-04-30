@@ -28,7 +28,6 @@ if [ -z "$LOADED_FUNCTIONS" ]; then
 fi
 
 # Add common paths in case they aren't already added.
-add_if_not "$HOME/.cargo/bin"
 add_if_not "$HOME/.local/bin"
 add_if_not "$HOME/venv/bin"
 add_if_not "$HOME/bin"
@@ -52,6 +51,9 @@ if is_zsh; then
 fi
 
 # Source additional configurations.
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
+	if [ -f "$SCRIPT" ]; then
+		. "$SCRIPT"
+	fi
+done
+unset SCRIPT
