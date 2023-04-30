@@ -44,6 +44,9 @@ keybinds = {
 
   -- Visualize tabs and newlines toggle.
   ["<leader>l"] = ":set list!<cr>",
+
+  -- Find files (uses fzf plugin).
+  ["<leader>f"] = ":tab split +Files<cr>",
 }
 
 -- Register user functions for pane navigation.
@@ -77,6 +80,8 @@ vim.cmd([[
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
   Plug 'flazz/vim-colorschemes'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
 
   call plug#end()
 
