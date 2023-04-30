@@ -28,6 +28,11 @@ if [ -d "$HOME/third-party/fzf" ]; then
 fi
 
 source ~/.shrc
+
+if [ -f "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+	. "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v

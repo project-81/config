@@ -14,6 +14,14 @@ alias ra="rcmpy apply"
 alias bazel="bazelisk"
 alias tat="tmux attach -d -t"
 
+# Source additional configurations.
+for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
+	if [ -f "$SCRIPT" ]; then
+		. "$SCRIPT"
+	fi
+done
+unset SCRIPT
+
 ###############################################################################
 
 if [ "$SHRC_LOADED" ]; then
@@ -43,17 +51,3 @@ export THIRD_PARTY=~/third-party
 export CMAKE_GENERATOR=Ninja
 
 [ "$PICO_SDK_PATH" ] || export PICO_SDK_PATH="$THIRD_PARTY/pico-sdk"
-
-if is_zsh; then
-	if [ -f "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-		. "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-	fi
-fi
-
-# Source additional configurations.
-for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
-	if [ -f "$SCRIPT" ]; then
-		. "$SCRIPT"
-	fi
-done
-unset SCRIPT
