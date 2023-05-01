@@ -14,8 +14,10 @@
 # compinit
 # End of lines added by compinstall
 
+THIRD_PARTY=$HOME/third-party
+
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/third-party/ohmyzsh"
+export ZSH="$THIRD_PARTY/ohmyzsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
 ZSH_THEME="steeef"
@@ -31,12 +33,12 @@ SCRIPTS=("$HOME/.shrc")
 SCRIPTS+=("$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh")
 SCRIPTS+=("$ZSH/oh-my-zsh.sh")
 
-for SCRIPT in "${SCRIPTS[@]}"; do
-	if [ -f $SCRIPT ]; then
-		. $SCRIPT
+for _SCRIPT in "${SCRIPTS[@]}"; do
+	if [ -f "$_SCRIPT" ]; then
+		. "$_SCRIPT"
 	fi
 done
 unset SCRIPTS
-unset SCRIPT
+unset _SCRIPT
 
 bindkey -v
