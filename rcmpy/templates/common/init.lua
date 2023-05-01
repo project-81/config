@@ -88,4 +88,20 @@ vim.cmd([[
   colo atom
 
   let g:airline#extensions#ale#enabled = 1
+
+  " ale settings
+  let g:ale_linters = {
+  \   'cpp': ['clangd', 'cc'],
+  \   'python': ['ruff', 'flake8', 'mypy', 'pylint', 'pylsp'],
+  \}
+  let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'cpp': ['clang-format'],
+  \   'python': ['isort', 'black'],
+  \}
+  let g:ale_python_pylsp_config = {}
+  let line_length = '--line-length 79'
+  let g:ale_python_black_options = line_length
+  let g:ale_python_isort_options = line_length . ' --profile black --fss -m 3'
+  let g:ale_fix_on_save = 1
 ]])
