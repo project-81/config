@@ -1,0 +1,5 @@
+---
+files:
+  - template: fix_commit_author
+    directory: "~/bin"
+    platforms: [linux]

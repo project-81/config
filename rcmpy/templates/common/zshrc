@@ -20,19 +20,23 @@ export ZSH="$HOME/third-party/ohmyzsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes.
 ZSH_THEME="steeef"
 
-plugins=(git tmux sudo command-not-found)
+plugins=(git command-not-found)
 
 if [ -d "$HOME/third-party/fzf" ]; then
 	plugins+=(fzf)
 	export FZF_BASE="$HOME/third-party/fzf"
 fi
 
-source ~/.shrc
+SCRIPTS=("$HOME/.shrc")
+SCRIPTS+=("$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh")
+SCRIPTS+=("$ZSH/oh-my-zsh.sh")
 
-if [ -f "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-	. "$THIRD_PARTY/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-source $ZSH/oh-my-zsh.sh
+for SCRIPT in "${SCRIPTS[@]}"; do
+	if [ -f $SCRIPT ]; then
+		. $SCRIPT
+	fi
+done
+unset SCRIPTS
+unset SCRIPT
 
 bindkey -v
