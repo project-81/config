@@ -1,4 +1,5 @@
-# shellcheck source=./shrc
-. ~/.shrc
-
-set -o vi
+if [[ $- == *i*  ]]; then
+	SHELL=$(which zsh)
+	export SHELL
+	exec "$SHELL" -l
+fi
