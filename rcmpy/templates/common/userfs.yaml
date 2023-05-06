@@ -1,0 +1,18 @@
+---
+projects:
+  runtimepy:
+    source: github
+    path: vkottler
+    attributes: &python-mk
+      python: true
+      mk: true
+
+  userfs:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  rcmpy:
+    source: github
+    path: vkottler
+    attributes: *python-mk
