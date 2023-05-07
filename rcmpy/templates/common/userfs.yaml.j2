@@ -6,6 +6,8 @@ projects:
     attributes: &python-mk
       python: true
       mk: true
+      submodules:
+        recursive: true
 
   userfs:
     source: github
@@ -28,3 +30,21 @@ projects:
   ctags:
     source: github
     path: universal-ctags
+{% if "nuc2" in env.platform.node %}
+
+  vkottler:
+    source: github
+    path: vkottler
+
+  renode:
+    source: github
+    path: renode
+
+  mcuboot:
+    source: github
+    path: mcu-tools
+
+  zephyr:
+    source: github
+    path: zephyrproject-rtos
+{% endif %}
