@@ -16,3 +16,15 @@ projects:
     source: github
     path: vkottler
     attributes: *python-mk
+
+  dotfiles:
+    source: github
+    path: vkottler
+
+  alacritty:
+    source: github
+    path: alacritty
+
+  ctags:
+    source: github
+    path: universal-ctags

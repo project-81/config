@@ -22,14 +22,17 @@ files:
 
   - template: add_ssh_keys.sh
     directory: "~/bin"
+    executable: true
     platforms: [linux]
 
   - template: loc
     directory: "~/bin"
+    executable: true
     platforms: [linux]
 
   - template: tnew
     directory: "~/bin"
+    executable: true
     platforms: [linux]
 
   - template: sshconfig
@@ -39,4 +42,8 @@ files:
 
   - template: config.toml
     directory: "~/.cargo"
+    platforms: [linux]
+
+  - template: alacritty.yml
+    directory: "~/.config"
     platforms: [linux]

@@ -1,0 +1,13 @@
+---
+window:
+  decorations: none
+  dynamic_padding: true
+  opacity: 0.85
+  startup_mode: Maximized
+
+font:
+  size: 14.0
+
+cursor:
+  style:
+    blinking: On

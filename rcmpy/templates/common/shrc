@@ -18,6 +18,7 @@ alias vim="nvim"
 alias ra="rcmpy apply"
 alias bazel="bazelisk"
 alias tat="tmux attach -d -t"
+alias tl="tmux ls"
 
 # Source additional configurations.
 for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
