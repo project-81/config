@@ -1,0 +1,80 @@
+---
+hooks: [~/workspace/hooks]
+
+projects:
+  runtimepy:
+    source: github
+    path: vkottler
+    attributes: &python-mk
+      python: true
+      mk: true
+      submodules:
+        recursive: false
+
+  userfs:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  rcmpy:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  vcorelib:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  datazen:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  dotfiles:
+    source: github
+    path: vkottler
+
+  alacritty:
+    source: github
+    path: alacritty
+
+  ctags:
+    source: github
+    path: universal-ctags
+{% if "nuc2" in env.platform.node or "vkottler" in env.platform.node %}
+
+  vkottler:
+    source: github
+    path: vkottler
+
+  renode:
+    source: github
+    path: renode
+
+  mcuboot:
+    source: github
+    path: mcu-tools
+
+  zephyr:
+    source: github
+    path: zephyrproject-rtos
+
+  Prusa-Firmware:
+    source: github
+    path: prusa3d
+
+  crosstool-ng:
+    source: github
+    path: crosstool-ng
+    fetch:
+      branch: master
+      single-branch: true
+      depth: 1
+{% endif %}
+{% if "rpi" in env.platform.node %}
+
+  OctoPrint:
+    source: github
+    path: OctoPrint
+{% endif %}
