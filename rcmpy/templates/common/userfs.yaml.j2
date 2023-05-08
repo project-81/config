@@ -1,4 +1,6 @@
 ---
+hooks: [~/workspace/hooks]
+
 projects:
   runtimepy:
     source: github
@@ -20,6 +22,11 @@ projects:
     attributes: *python-mk
 
   vcorelib:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  datazen:
     source: github
     path: vkottler
     attributes: *python-mk
@@ -52,6 +59,14 @@ projects:
   zephyr:
     source: github
     path: zephyrproject-rtos
+
+  Prusa-Firmware:
+    source: github
+    path: prusa3d
+
+  crosstool-ng:
+    source: github
+    path: crosstool-ng
 {% endif %}
 {% if "rpi" in env.platform.node %}
 
