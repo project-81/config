@@ -53,3 +53,9 @@ projects:
     source: github
     path: zephyrproject-rtos
 {% endif %}
+{% if "rpi" in env.platform.node %}
+
+  OctoPrint:
+    source: github
+    path: OctoPrint
+{% endif %}
