@@ -7,7 +7,7 @@ projects:
       python: true
       mk: true
       submodules:
-        recursive: true
+        recursive: false
 
   userfs:
     source: github
@@ -15,6 +15,11 @@ projects:
     attributes: *python-mk
 
   rcmpy:
+    source: github
+    path: vkottler
+    attributes: *python-mk
+
+  vcorelib:
     source: github
     path: vkottler
     attributes: *python-mk
@@ -30,7 +35,7 @@ projects:
   ctags:
     source: github
     path: universal-ctags
-{% if "nuc2" in env.platform.node %}
+{% if "nuc2" in env.platform.node or "vkottler" in env.platform.node %}
 
   vkottler:
     source: github
