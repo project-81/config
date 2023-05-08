@@ -67,6 +67,10 @@ projects:
   crosstool-ng:
     source: github
     path: crosstool-ng
+    fetch:
+      branch: master
+      single-branch: true
+      depth: 1
 {% endif %}
 {% if "rpi" in env.platform.node %}
 
