@@ -51,6 +51,11 @@ add_front_if_not "$HOME/bin"
 add_front_if_not "$HOME/.local/bin"
 add_if_not "/snap/bin"
 
+# Add paths that aren't added by default in some distributions.
+add_if_not "/usr/local/sbin"
+add_if_not "/usr/sbin"
+add_if_not "/sbin"
+
 # Add go binaries to PATH.
 if is_cmd go; then
 	add_if_not "$(go env GOPATH)/bin"
