@@ -2,7 +2,11 @@
 hooks: [~/workspace/hooks]
 
 projects:
-  runtimepy:
+  ctags:
+    source: github
+    path: universal-ctags
+
+  vcorelib:
     source: github
     path: vkottler
     attributes: &python-mk
@@ -10,47 +14,26 @@ projects:
       mk: true
       submodules:
         recursive: false
+{% for repo in git.repos.vkottler_python_mk %}
 
-  userfs:
+  {{repo}}:
     source: github
     path: vkottler
     attributes: *python-mk
+{% endfor %}
+{% for repo in git.repos.vkottler %}
 
-  rcmpy:
+  {{repo}}:
     source: github
     path: vkottler
-    attributes: *python-mk
-
-  vcorelib:
-    source: github
-    path: vkottler
-    attributes: *python-mk
-
-  datazen:
-    source: github
-    path: vkottler
-    attributes: *python-mk
-
-  dotfiles:
-    source: github
-    path: vkottler
+{% endfor %}
+{% if env.platform.node in computers.gui %}
 
   alacritty:
     source: github
     path: alacritty
-
-  ctags:
-    source: github
-    path: universal-ctags
-{% if "nuc2" in env.platform.node or "vkottler" in env.platform.node %}
-
-  vkottler:
-    source: github
-    path: vkottler
-
-  vmklib:
-    source: github
-    path: vkottler
+{% endif %}
+{% if env.platform.node in computers.dev %}
 
   renode:
     source: github
@@ -84,7 +67,7 @@ projects:
       single-branch: true
       depth: 1
 {% endif %}
-{% if "rpi" in env.platform.node %}
+{% if env.platform.node in computers.pi %}
 
   OctoPrint:
     source: github

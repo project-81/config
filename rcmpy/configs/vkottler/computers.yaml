@@ -1,0 +1,8 @@
+---
+gui:
+  - nuc2
+dev:
+  - vkottler-win-desktop
+  - nuc2
+pi:
+  - rpi4-1
