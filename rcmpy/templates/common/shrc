@@ -28,6 +28,8 @@ for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
 done
 unset SCRIPT
 
+export LD_LIBRARY_PATH="$HOME/.local/lib"
+
 ###############################################################################
 
 if [ "$SHRC_LOADED" ]; then
