@@ -4,3 +4,8 @@ files:
     directory: "~/bin"
     executable: true
     platforms: [linux]
+
+  - template: md.py
+    directory: "~/bin"
+    executable: true
+    platforms: [linux]
