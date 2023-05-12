@@ -28,7 +28,9 @@ for SCRIPT in "$HOME/.bash_aliases" "$HOME/.cargo/env"; do
 done
 unset SCRIPT
 
-export LD_LIBRARY_PATH="$HOME/.local/lib"
+# We shouldn't rely on these, ideally.
+# export LD_LIBRARY_PATH="$HOME/.local/lib"
+# export RPATH="$LD_LIBRARY_PATH"
 
 ###############################################################################
 
