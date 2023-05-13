@@ -1,6 +1,7 @@
 ---
 gui:
   - nuc2
+  - vkottler-tower
 dev:
   - vkottler-win-desktop
   - vkottler-tower
