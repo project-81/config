@@ -3,6 +3,7 @@ gui:
   - nuc2
 dev:
   - vkottler-win-desktop
+  - vkottler-tower
   - nuc2
 pi:
   - rpi4-1
