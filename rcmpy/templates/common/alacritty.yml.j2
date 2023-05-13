@@ -6,7 +6,7 @@ window:
   startup_mode: Maximized
 
 font:
-  size: 14.0
+  size: {{alacritty.by_node[env.platform.node].font.size | default(alacritty.font.size, true)}}
 
 cursor:
   style:
