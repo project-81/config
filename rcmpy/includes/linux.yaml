@@ -47,3 +47,7 @@ files:
   - template: alacritty.yml
     directory: "~/.config"
     platforms: [linux]
+
+  - template: gdbinit
+    directory: "~/.config/gdb"
+    platforms: [linux]
