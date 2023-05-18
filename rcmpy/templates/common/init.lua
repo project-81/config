@@ -92,7 +92,7 @@ vim.cmd([[
   " ale settings
   let g:ale_linters = {
   \   'cpp': ['clangd', 'cc'],
-  \   'python': ['ruff', 'flake8', 'mypy', 'pylint', 'pylsp'],
+  \   'python': ['ruff', 'flake8', 'mypy', 'pylint'],
   \}
   let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
