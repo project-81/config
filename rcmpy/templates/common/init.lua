@@ -91,11 +91,13 @@ vim.cmd([[
 
   " ale settings
   let g:ale_linters = {
-  \   'cpp': ['clangd', 'cc'],
+  \   'c': ['cc'],
+  \   'cpp': ['cc'],
   \   'python': ['ruff', 'flake8', 'mypy', 'pylint'],
   \}
   let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'c': ['clang-format'],
   \   'cpp': ['clang-format'],
   \   'python': ['isort', 'black'],
   \}
@@ -105,3 +107,7 @@ vim.cmd([[
   let g:ale_python_isort_options = line_length . ' --profile black --fss -m 3'
   let g:ale_fix_on_save = 1
 ]])
+
+if (vim.fn.filereadable("./.vimrc") ~= 0) then
+  vim.cmd("source ./.vimrc")
+end
