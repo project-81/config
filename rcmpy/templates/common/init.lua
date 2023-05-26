@@ -106,6 +106,12 @@ vim.cmd([[
   let g:ale_python_black_options = line_length
   let g:ale_python_isort_options = line_length . ' --profile black --fss -m 3'
   let g:ale_fix_on_save = 1
+
+  augroup indent_settings
+    au!
+    au FileType c setlocal ts=4 sts=4 sw=4 expandtab
+    au FileType cpp setlocal ts=4 sts=4 sw=4 expandtab
+  augroup END
 ]])
 
 if (vim.fn.filereadable("./.vimrc") ~= 0) then
