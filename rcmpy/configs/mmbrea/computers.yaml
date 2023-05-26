@@ -1,2 +1,3 @@
 ---
-dev: [amber-desktop]
+dev: &workstations [amber-desktop]
+gui: *workstations
