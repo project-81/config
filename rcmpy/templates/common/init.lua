@@ -76,7 +76,7 @@ vim.cmd([[
   let g:plug_url_format = 'git@github.com:%s.git'
   call plug#begin('~/.vim/plugged')
 
-  Plug 'jiangmiao/auto-pairs'
+  Plug 'LunarWatcher/auto-pairs'
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
   Plug 'flazz/vim-colorschemes'
