@@ -16,7 +16,7 @@ export GIT_PYTHON_TRACE=full
 # Aliases.
 alias vim="nvim"
 alias ra="rcmpy apply"
-alias bazel="bazelisk"
+# alias bazel="bazelisk"
 alias tat="tmux attach -d -t"
 alias tl="tmux ls"
 
