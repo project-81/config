@@ -44,7 +44,7 @@ files:
     directory: "~/.cargo"
     platforms: [linux]
 
-  - template: alacritty.yml
+  - template: alacritty.toml
     directory: "~/.config"
     platforms: [linux]
 

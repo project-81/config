@@ -1,0 +1,15 @@
+[window]
+dynamic_padding = true
+decorations = "none"
+opacity = 0.85
+startup_mode = "Maximized"
+
+[font]
+{% if "by_node" in alacritty and env.platform.node in alacritty.by_node %}
+size = {{alacritty.by_node[env.platform.node].font.size | default(alacritty.font.size, true)}}
+{% else %}
+size = {{alacritty.font.size}}
+{% endif %}
+
+[cursor]
+style = {blinking = "On"}
