@@ -2,8 +2,6 @@
 email: vaughnkottler@gmail.com
 name: Vaughn Kottler
 
-wakatime_api_key: waka_c18d948b-a869-4248-bfcb-0b8ae4e31b4b
-
 repos:
   vkottler: [dotfiles, home-network, vkottler]
   vkottler_python_mk: [userfs, rcmpy, runtimepy, datazen, vmklib]
