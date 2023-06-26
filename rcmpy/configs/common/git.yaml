@@ -3,6 +3,8 @@ email: project-81@outlook.com
 name: project-81
 editor: nvim
 
+wakatime_api_key: waka_d7d90513-56e8-4f70-baed-fea8adfabaf0
+
 repos:
   vkottler: []
   vkottler_python_mk: []
