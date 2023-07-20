@@ -82,7 +82,9 @@ vim.cmd([[
   Plug 'flazz/vim-colorschemes'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
-  Plug 'wakatime/vim-wakatime'
+
+  " WakaTime gets infosec pissed.
+  " Plug 'wakatime/vim-wakatime'
 
   call plug#end()
 
