@@ -5,6 +5,10 @@ files:
     directory: "~"
     platforms: [linux]
 
+  - template: bashrc
+    directory: "~/.bashrc.d"
+    platforms: [linux]
+
   - template: shrc
     name: .shrc
     directory: "~"
