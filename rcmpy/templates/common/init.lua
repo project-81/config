@@ -103,7 +103,7 @@ vim.cmd([[
   \   'python': ['isort', 'black'],
   \}
   let flags = '-Wall -Werror -Wextra -Wpedantic'
-  let g:ale_cpp_cc_options = '-std=gnu++20 ' . flags
+  let g:ale_cpp_cc_options = '-std=gnu++2b ' . flags
   let g:ale_c_cc_options = '-std=gnu17' . flags
   let g:ale_python_pylsp_config = {}
   let line_length = '--line-length 79'
