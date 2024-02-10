@@ -100,6 +100,7 @@ vim.cmd([[
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \   'c': ['clang-format'],
   \   'cpp': ['clang-format'],
+  \   'java': ['clang-format'],
   \   'python': ['isort', 'black'],
   \}
   let flags = '-Wall -Werror -Wextra -Wpedantic'

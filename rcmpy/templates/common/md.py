@@ -14,8 +14,12 @@ from grip import serve  # type: ignore
 
 USER = getuser()
 
-with open(Path.home().joinpath("grip_access_token.txt")) as path_fd:
-    PASSWORD = path_fd.read()
+PASSWORD = ""
+try:
+    with open(Path.home().joinpath("grip_access_token.txt")) as path_fd:
+        PASSWORD = path_fd.read()
+except FileNotFoundError:
+    pass
 
 PATH = "README.md"
 
