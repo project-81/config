@@ -46,7 +46,7 @@ files:
 
   - template: alacritty.toml
     directory: "~/.config"
-    platforms: [linux]
+    platforms: [linux, darwin]
 
   - template: gdbinit
     directory: "~/.config/gdb"
