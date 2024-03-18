@@ -60,6 +60,7 @@ add_front_if_not "$HOME/bin"
 add_front_if_not "$HOME/.local/bin"
 add_if_not "$HOME/src/emscripten-core/emsdk"
 add_if_not "$HOME/src/emscripten-core/emsdk/upstream/emscripten"
+add_if_not "/opt/homebrew/bin"
 add_if_not "/snap/bin"
 
 # Add paths that aren't added by default in some distributions.
