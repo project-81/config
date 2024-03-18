@@ -3,58 +3,58 @@ files:
   - template: bashrc
     name: .alias
     directory: "~"
-    platforms: [linux]
+    platforms: &both [linux, darwin]
 
   - template: bashrc
     directory: "~/.bashrc.d"
-    platforms: [linux]
+    platforms: *both
 
   - template: shrc
     name: .shrc
     directory: "~"
-    platforms: [linux]
+    platforms: *both
 
   - template: zshrc
     name: .zshrc
     directory: "~"
-    platforms: [linux]
+    platforms: *both
 
   - template: tmux.conf
     name: .tmux.conf
     directory: "~"
-    platforms: [linux]
+    platforms: *both
 
   - template: add_ssh_keys.sh
     directory: "~/bin"
     executable: true
-    platforms: [linux]
+    platforms: *both
 
   - template: loc
     directory: "~/bin"
     executable: true
-    platforms: [linux]
+    platforms: *both
 
   - template: tnew
     directory: "~/bin"
     executable: true
-    platforms: [linux]
+    platforms: *both
 
   - template: sshconfig
     name: config
     directory: "~/.ssh"
-    platforms: [linux]
+    platforms: *both
 
   - template: config.toml
     directory: "~/.cargo"
-    platforms: [linux]
+    platforms: *both
 
   - template: alacritty.toml
     directory: "~/.config"
-    platforms: [linux, darwin]
+    platforms: *both
 
   - template: gdbinit
     directory: "~/.config/gdb"
-    platforms: [linux]
+    platforms: *both
 
   - template: wakatime.cfg
     name: .wakatime.cfg

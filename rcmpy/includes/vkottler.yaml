@@ -3,9 +3,9 @@ files:
   - template: fix_commit_author
     directory: "~/bin"
     executable: true
-    platforms: [linux]
+    platforms: &both [linux, darwin]
 
   - template: md.py
     directory: "~/bin"
     executable: true
-    platforms: [linux]
+    platforms: *both
