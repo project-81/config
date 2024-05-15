@@ -1,7 +1,7 @@
 # Common shell settings.
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 export LANGUAGE=en_US
+export LC_ALL=$LANGUAGE.UTF-8
+export LANG=$LANGUAGE.UTF-8
 export EDITOR="nvim"
 
 export THIRD_PARTY="$HOME/third-party"
