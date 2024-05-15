@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{matrix.system}}
     strategy:
       matrix:
-        python-version: ["3.11"]
+        python-version: ["3.12"]
         system: [ubuntu-latest]
 
     env:
