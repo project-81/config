@@ -29,8 +29,13 @@ done
 unset SCRIPT
 
 # We shouldn't rely on these, ideally.
+
 # export LD_LIBRARY_PATH="$HOME/.local/lib"
 # export RPATH="$LD_LIBRARY_PATH"
+
+# PKG_CONFIG_PATH="/usr/lib/$(uname -m)-linux-gnu/pkgconfig"
+# PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/share/pkgconfig"
+# export PKG_CONFIG_PATH
 
 ###############################################################################
 
