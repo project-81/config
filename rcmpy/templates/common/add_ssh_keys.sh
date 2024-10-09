@@ -2,21 +2,30 @@
 
 set -e
 
-SSH_DIR=~/.ssh
-PRIV_KEY=$SSH_DIR/id_rsa
-PUBL_KEY=$PRIV_KEY.pub
-AUTH_KEYS=$SSH_DIR/authorized_keys
-
 if ! [ "$1" ]; then
 	echo "Must specify host."
 	exit 1
 fi
+
+SSH_DIR=~/.ssh
+AUTH_KEYS=$SSH_DIR/authorized_keys
 
 # Use the real IP address.
 SSH_ARG="$USER@$(getent ahostsv4 "$1" | sed -n 's/ *STREAM.*//p')"
 
 # make sure the target directory exists
 ssh "$SSH_ARG" mkdir -p $SSH_DIR
+
+# add all key pairs
+for KIND in id_rsa id_ed25519; do
+
+PRIV_KEY=$SSH_DIR/$KIND
+PUBL_KEY=$PRIV_KEY.pub
+
+# make sure this pair exists
+if [ ! -f $PUBL_KEY ] || [ ! -f $PRIV_KEY ]; then
+	continue
+fi
 
 # make our key authorized, first
 if ssh "$SSH_ARG" stat $AUTH_KEYS \> /dev/null 2\>\&1; then
@@ -51,3 +60,5 @@ add_file_to_remote() {
 # add our keys
 add_file_to_remote "$1" $PRIV_KEY
 add_file_to_remote "$1" $PUBL_KEY
+
+done
