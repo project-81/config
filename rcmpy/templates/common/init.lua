@@ -95,6 +95,7 @@ vim.cmd([[
   \   'c': ['cc'],
   \   'cpp': ['cc'],
   \   'python': ['ruff', 'flake8', 'mypy', 'pylint'],
+  \   'lua': ['luac'],
   \}
   let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -102,6 +103,7 @@ vim.cmd([[
   \   'cpp': ['clang-format'],
   \   'java': ['clang-format'],
   \   'python': ['isort', 'black'],
+  \   'lua': ['stylua'],
   \}
   let flags = '-Wall -Werror -Wextra -Wpedantic'
   let g:ale_cpp_cc_options = '-std=gnu++2b ' . flags
