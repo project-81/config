@@ -1,12 +1,13 @@
 ---
+dev: []
 gui:
   - nuc2
   - vkottler-adder-ws
   - vkottler-tower
-dev:
-  - vkottler-adder-ws
-  - vkottler-win-desktop
-  - vkottler-tower
-  - nuc2
+# dev:
+#   - vkottler-adder-ws
+#   - vkottler-win-desktop
+#   - vkottler-tower
+#   - nuc2
 pi:
   - rpi4-1
