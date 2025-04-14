@@ -51,8 +51,3 @@ files:
   - template: gdbinit
     directory: "~/.config/gdb"
     platforms: [linux]
-
-  - template: wakatime.cfg
-    name: .wakatime.cfg
-    directory: "~"
-    platforms: [linux]
