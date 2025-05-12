@@ -105,8 +105,11 @@ vim.cmd([[
   \   'lua': ['stylua'],
   \}
   let flags = '-Wall -Werror -Wextra -Wpedantic'
-  let g:ale_cpp_cc_options = '-std=gnu++2b ' . flags
-  let g:ale_c_cc_options = '-std=gnu17' . flags
+  let g:ale_c_clangformat_executable = 'clang-format-19'
+  let g:ale_cpp_cc_executable = 'g++-14'
+  let g:ale_cpp_cc_options = '-std=gnu++26 ' . flags
+  let g:ale_c_cc_executable = 'gcc-14'
+  let g:ale_c_cc_options = '-std=gnu23' . flags
   let g:ale_python_pylsp_config = {}
   let line_length = '--line-length 79'
   let g:ale_python_black_options = line_length
