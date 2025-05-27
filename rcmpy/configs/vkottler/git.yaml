@@ -4,4 +4,3 @@ name: Vaughn Kottler
 
 repos:
   vkottler: [dotfiles, home-network, vkottler]
-  vkottler_python_mk: [userfs, rcmpy, runtimepy, datazen, vmklib]

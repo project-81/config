@@ -17,26 +17,6 @@ projects:
   lcov:
     source: github
     path: linux-test-project
-
-  firmware:
-    source: github
-    path: project-81
-
-  vcorelib:
-    source: github
-    path: vkottler
-    attributes: &python-mk
-      python: true
-      mk: true
-      submodules:
-        recursive: false
-{% for repo in git.repos.vkottler_python_mk %}
-
-  {{repo}}:
-    source: github
-    path: vkottler
-    attributes: *python-mk
-{% endfor %}
 {% for repo in git.repos.vkottler %}
 
   {{repo}}:
@@ -48,40 +28,6 @@ projects:
   alacritty:
     source: github
     path: alacritty
-{% endif %}
-{% if env.platform.node in computers.dev %}
-
-  kicad:
-    source: gitlab
-    path: kicad/code
-
-  renode:
-    source: github
-    path: renode
-
-  mcuboot:
-    source: github
-    path: mcu-tools
-
-  uf2:
-    source: github
-    path: microsoft
-
-  zephyr:
-    source: github
-    path: zephyrproject-rtos
-
-  Prusa-Firmware:
-    source: github
-    path: prusa3d
-
-  ansible:
-    source: github
-    path: ansible
-
-  # dtc:
-  #   source: github
-  #   path: dgibson
 {% endif %}
 {% if env.platform.node in computers.pi %}
 
