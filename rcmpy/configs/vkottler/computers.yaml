@@ -4,6 +4,7 @@ gui:
   - nuc2
   - vkottler-adder-ws
   - vkottler-tower
+  - libre-xps
 # dev:
 #   - vkottler-adder-ws
 #   - vkottler-win-desktop
