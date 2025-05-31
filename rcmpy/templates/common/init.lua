@@ -79,7 +79,11 @@ vim.cmd([[
   Plug 'LunarWatcher/auto-pairs'
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
+
   Plug 'flazz/vim-colorschemes'
+  Plug 'felixhummel/setcolors.vim'
+  Plug 'xiyaowong/transparent.nvim'
+
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 
