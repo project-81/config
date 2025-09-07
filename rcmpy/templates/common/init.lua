@@ -80,16 +80,12 @@ vim.cmd([[
   Plug 'dense-analysis/ale'
   Plug 'vim-airline/vim-airline'
 
-  Plug 'flazz/vim-colorschemes'
-  Plug 'felixhummel/setcolors.vim'
-  Plug 'xiyaowong/transparent.nvim'
+  Plug 'navarasu/onedark.nvim'
 
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
 
   call plug#end()
-
-  colo atom
 
   let g:airline#extensions#ale#enabled = 1
 
@@ -130,6 +126,12 @@ vim.cmd([[
     au FileType html setlocal ts=2 sts=2 sw=2 expandtab
   augroup END
 ]])
+
+require('onedark').setup {
+    style = 'darker',
+    transparent = true
+}
+require('onedark').load()
 
 if vim.fn.filereadable("./.vimrc") ~= 0 then
 	vim.cmd("source ./.vimrc")
