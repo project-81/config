@@ -104,7 +104,8 @@ vim.cmd([[
   \   'python': ['isort', 'black'],
   \   'lua': ['stylua'],
   \}
-  let flags = '-Wall -Werror -Wextra -Wpedantic'
+  let flags = '-Wall -Werror -Wextra -Wpedantic '
+  let flags .= '-Wno-address-of-packed-member -Wno-pragma-once-outside-header'
   let g:ale_c_clangformat_executable = 'clang-format-19'
   let g:ale_cpp_cc_executable = 'g++-14'
   let g:ale_cpp_cc_options = '-std=gnu++26 ' . flags
