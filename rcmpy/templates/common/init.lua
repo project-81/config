@@ -93,6 +93,7 @@ vim.cmd([[
   let g:ale_linters = {
   \   'c': ['cc'],
   \   'cpp': ['cc'],
+  \   'asm': ['gcc'],
   \   'python': ['ruff', 'flake8', 'mypy', 'pylint'],
   \   'lua': ['luac'],
   \}
@@ -110,7 +111,9 @@ vim.cmd([[
   let g:ale_cpp_cc_executable = 'g++-14'
   let g:ale_cpp_cc_options = '-std=gnu++26 ' . flags
   let g:ale_c_cc_executable = 'gcc-14'
-  let g:ale_c_cc_options = '-std=gnu23' . flags
+  let g:ale_c_cc_options = '-std=gnu23 ' . flags
+  let g:ale_asm_gcc_executable = g:ale_c_cc_executable
+  let g:ale_asm_gcc_options = g:ale_c_cc_options
   let g:ale_python_pylsp_config = {}
   let line_length = '--line-length 79'
   let g:ale_python_black_options = line_length
